@@ -1,6 +1,30 @@
 {
   "flashcards": [
     {
+      "suuid": "hKZ8Xt",
+      "category": "linux",
+      "front": "dasdasd",
+      "back": "pwd"
+    },
+    {
+      "suuid": "tDLrL6",
+      "category": "linux",
+      "front": "   dasdasd  ",
+      "back": "   pwd  "
+    },
+    {
+      "suuid": "qjhe3L",
+      "category": "linux",
+      "front": "   dasdasd",
+      "back": "pwd"
+    },
+    {
+      "suuid": "tYtjCZ",
+      "category": "linux",
+      "front": "dasdasd",
+      "back": "pwd"
+    },
+    {
       "suuid": "2Rz81V",
       "category": "linux",
       "front": "find out the current directory",
