@@ -8,7 +8,8 @@ export const getDb = async () => {
 	const dbPathAndFileName = join(projectBasePath, "backend/data/db.json");
 	const adapter = new JSONFile<IDatabase>(dbPathAndFileName);
 	const db: Low<IDatabase> = new Low<IDatabase>(adapter, {} as IDatabase);
-	if (db.data.flashcards.length === 0) {
+	await db.read();
+	if (Object.keys(db.data).length === 0) {
 		return null;
 	} else {
 		return db;
