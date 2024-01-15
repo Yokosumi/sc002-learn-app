@@ -1,4 +1,5 @@
 import express from "express";
+import { suuidIsValid } from "../handlers/dbtools";
 
 export const flashcardSuuidValidate = (
 	req: express.Request,
@@ -11,6 +12,10 @@ export const flashcardSuuidValidate = (
 	if (suuid.length !== 6) {
 		errors.push("suuid must be 6 characters");
 	}
+	if (!suuidIsValid(suuid)) {
+		errors.push("suuid contains invalid characters");
+	}
+
 	if (errors.length > 0) {
 		res.status(400).json({
 			message: "Invalid suuid",
