@@ -12,9 +12,11 @@ export const flashcardSuuidValidate = (
 		errors.push("suuid must be 6 characters");
 	}
 	if (errors.length > 0) {
-		res.status(400).send({
+		res.status(400).json({
 			message: "Invalid suuid",
+			errors,
 		});
+	} else {
+		next();
 	}
-	next();
 };

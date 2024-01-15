@@ -1,12 +1,12 @@
-import { IApiStatus } from '../../src/shared/interfaces';
+import { IApiStatus } from "../../src/shared/interfaces";
 
 export const getPort = () => {
-	return 4206;
-}
+	return 4101;
+};
 
 export const apiStatus = (): IApiStatus => {
 	return {
 		status: "live",
-		whenLiveAgainDateTime: "2024-01-15 11:00:00"
-	}
-}
+		whenLiveAgainDateTime: "2024-01-15 11:00:00",
+	};
+};
