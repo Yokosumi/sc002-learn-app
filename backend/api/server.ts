@@ -2,6 +2,7 @@ import express, { NextFunction } from "express";
 import { flashcardRouter } from "./routers/flashcardRouter";
 import cors from "cors";
 import { maintenanceMode } from "./middleware/maintenanceMode";
+import { logger } from "./logger";
 
 export const app = express();
 app.use(express.json());
@@ -24,7 +25,7 @@ app.use(
 		next: NextFunction
 	) => {
 		console.error(err.message);
-		// TODO: write to logs
+		logger.error(err.message);
 		res.status(500).send(
 			"We are currently experiencing technical difficulties. Try again at a later time, or call 423 23423 23 234."
 		);
