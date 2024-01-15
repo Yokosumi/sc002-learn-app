@@ -1,15 +1,14 @@
 export interface INewFlashcard {
 	category: string;
-	front: string
+	front: string;
 	back: string;
 }
 
-
 export const blankNewFlashcard: INewFlashcard = {
-	category: 'linux',
-	front: '',
-	back: ''
-}
+	category: "linux",
+	front: "",
+	back: "",
+};
 
 export interface IFlashcard extends INewFlashcard {
 	suuid: string;
@@ -26,7 +25,7 @@ export interface IFrontendFlashcard extends IFlashcard {
 
 export interface IPatchFlashcard {
 	category?: string;
-	front?: string
+	front?: string;
 	back?: string;
 }
 
@@ -38,33 +37,39 @@ export interface IPromiseResolution {
 	message: string;
 }
 
-export const convertFlashcardToFrontendFlaschard = (flashcard: IFlashcard): IFrontendFlashcard => {
+export const convertFlashcardToFrontendFlaschard = (
+	flashcard: IFlashcard
+): IFrontendFlashcard => {
 	return {
 		...flashcard,
 		userIsDeleting: false,
-		userIsEditing: false
-	}
-}
+		userIsEditing: false,
+	};
+};
 
-export const convertFrontendFlashcardToFlaschard = (frontendFlashcard: IFrontendFlashcard): IFlashcard => {
-    return {
-        suuid: frontendFlashcard.suuid,
-        category: frontendFlashcard.category,
-        front: frontendFlashcard.front,
-        back: frontendFlashcard.back
-    }
-}
+export const convertFrontendFlashcardToFlaschard = (
+	frontendFlashcard: IFrontendFlashcard
+): IFlashcard => {
+	return {
+		suuid: frontendFlashcard.suuid,
+		category: frontendFlashcard.category,
+		front: frontendFlashcard.front,
+		back: frontendFlashcard.back,
+	};
+};
 
 export type ISiteEnvironment = "development" | "production";
 
-export const convertFlashcardToTestingFlaschard = (flashcard: IFlashcard): ITestingFlashcard => {
+export const convertFlashcardToTestingFlaschard = (
+	flashcard: IFlashcard
+): ITestingFlashcard => {
 	return {
 		...flashcard,
-		backIsShowing: false
-	}
-}
+		backIsShowing: false,
+	};
+};
 
 export type IApiStatus = {
-	status: "live" | "maintenanceMode",
-	whenLiveAgainDateTime: string
-}
+	status: "live" | "maintenanceMode";
+	whenLiveAgainDateTime: string;
+};
